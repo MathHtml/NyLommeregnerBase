@@ -17,14 +17,19 @@ actions.add1 = {
 actions.sortOnLength = {
     types: [String, String, String],
     function: function(a, b, c){
-        return "a aa aaa";
+        let input = [a, b, c];
+        input.sort(function(x, y){
+            return x.length - y.length;
+        });
+        return input.join(' ');
     }    
-}
+    }
+    
 
 // returns the sum of the ages of the three persons
 actions.totalAge = {
     types: [JSON.parse, JSON.parse, JSON.parse],
-    function: function(alice, bob, cat){
+    function: function(alice, bob, cat) {
         return -1;
     }
 };
